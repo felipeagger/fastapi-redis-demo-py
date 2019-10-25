@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  producer:
+    container_name: fast-api
+    build: '.'
+    environment:
+      HOST_REDIS: redis
+      FLASK_ENV: development
+    depends_on:
+      - redis  
+    ports:
+      - '8000:8000'
+    restart: always   
+
+  redis:
+    container_name: redis
+    image: redis:latest    
+    ports:
+      - '6379:6379'
