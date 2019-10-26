@@ -16,7 +16,7 @@ Salvando e Recuperando dados do Cache no Redis com Python.
 
 # Dependencias
 
-FastAPI, redis
+FastAPI, redis, pytest, starlette
 
 # Requisitos :
 
@@ -47,3 +47,6 @@ Para Utilizar Docker é necessario ter instalado:
 
 # Referencias
 
+https://fastapi.tiangolo.com/tutorial/first-steps/
+
+https://redislabs.com/lp/python-redis/

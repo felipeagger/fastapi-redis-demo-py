@@ -16,7 +16,7 @@ import redis
 # Create an instance of the redis
 redis_instance = redis.Redis(
     host=getenv('HOST_REDIS'),
-    port='6379')
+    port=getenv('PORT_REDIS'))  #'6379'
 
 #password='password'
 

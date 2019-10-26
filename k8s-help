@@ -1,0 +1,39 @@
+#Docker Build Image
+docker build -t felipeagger/fast-api-redis .
+
+#Docker push to DockerHub
+docker login
+docker push usuario/imagem:latest
+
+### - Kubernetes - ###
+
+#cluster-info
+kubectl cluster-info
+
+#Create namespace
+kubectl create namespace prod
+
+#Create Service / Deployment / Pod
+kubectl create -f redis-deployment.yaml --namespace=dev
+
+#Remove
+kubectl delete -f redis-deployment.yaml
+
+#get host:port of service 
+
+minikube service list --namespace dev
+minikube service redis --url
+
+#others
+
+kubectl get all --namespace=dev
+
+kubectl get nodes
+kubectl get pods
+kubectl get rc
+kubectl get svc
+
+kubectl scale --replicas=3 rc fastapi
+
+#Logs
+kubectl logs fastapi-5pk8f --namespace=dev
