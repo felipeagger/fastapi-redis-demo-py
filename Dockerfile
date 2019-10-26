@@ -1,15 +1,13 @@
-FROM python:3.7
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
 RUN mkdir -p /home/py/app
 
-WORKDIR /home/py/app
+WORKDIR /app
 
 COPY . .
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["python"]
-
 EXPOSE 8000
 
-CMD [ "app.py" ]
+CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000" ]

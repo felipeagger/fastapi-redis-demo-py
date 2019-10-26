@@ -37,7 +37,7 @@ docker:
 	@docker-compose up -d
 	@sleep 5
 	@echo "---- EndPoints ----"
-	@echo "---- Fast API - http://127.0.0.1:8000/docs ----"
+	@echo "---- Fast API - http://127.0.0.1:8000/api-docs ----"
 
 dockerdown:
 	@docker-compose down
