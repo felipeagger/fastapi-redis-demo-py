@@ -9,17 +9,17 @@ spec:
   selector:
     app: fastapi
 ---
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: fastapi
 spec:
   replicas: 1
   selector:
-    app: fastapi
+    matchLabels:
+      app: fastapi
   template:
     metadata:
-      name: fastapi
       labels:
         app: fastapi
     spec:
