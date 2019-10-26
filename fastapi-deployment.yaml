@@ -25,7 +25,8 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: felipeagger/fast-api-redis:latest
+        image: 127.0.0.1:30400/fast-api-redis:latest
+        imagePullPolicy: Always
         env:
         - name: HOST_REDIS
           value: 'redis'
