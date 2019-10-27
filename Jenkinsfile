@@ -22,6 +22,6 @@ node {
         input "Deploy to PROD?"
         //customImage.push('latest')
         sh "kubectl apply -f https://raw.githubusercontent.com/felipeagger/fastapi-redis-demo-py/master/fastapi-deployment.yaml"
-        sh "kubectl set image deployment fast-api-redis app=${imageName} --record"
-        sh "kubectl rollout status deployment/fast-api-redis"
+        sh "kubectl set image deployment fastapi app=${imageName} --record"
+        sh "kubectl rollout status deployment/fastapi"
 }
