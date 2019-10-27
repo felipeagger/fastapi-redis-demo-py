@@ -16,8 +16,8 @@ node {
     
     stage "Build"
         def customImage = docker.build("${imageName}")
-    stage "Push"
-        customImage.push() 
+    //stage "Push"
+    //    customImage.push() 
     stage "Deploy PROD"
         input "Deploy to PROD?"
         customImage.push('latest')
